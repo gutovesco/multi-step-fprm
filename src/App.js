@@ -1,38 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, {Component } from 'react';
 import './App.css';
+import UserForm from './components/UserForm'
 
-function App() {
-
-  const [state, setState] = useState({
-    step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
-  })
-
-  const nextStep = () => {
-    setState(state => {
-      step = step + 1
-    })
-  }
-  const prevStep = () => {
-    setState(state => {
-      step = step - 1
-    })
-  }
-
-  handleChange = input => e => {
-    setState({[input]: e.target.value})
-  }
-
-  return (
+class App extends Component{
+  render(){
+    return(
     <div className="App">
-
+      <UserForm />
     </div>
-  );
+    )
+}
 }
 
 export default App;
